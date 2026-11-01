@@ -1,0 +1,96 @@
+{
+  "skills": [
+    {
+      "name": "wat",
+      "source": "codex/wat",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "origin": "https://github.com/CyrusNuevoDia/agent-wat",
+      "files": {
+        "LICENSE": "2499825fe16caf1b789b15317d4a08f5d6e158ad098f2523ccb047ef336d9211",
+        "SKILL.md": "6236ffa988c15f91e0df2b63afb2b902fe63fa15b52fbadf4a5f7e07fbde0eb3",
+        "references/capitalization-and-names.md": "cc101bb89ec779212ba013ebe9a765dae14105b02aac29e308e1a8fe80948db9",
+        "references/code-and-markup.md": "ccdaff8fe817608a66d1b3d84b4488959040af0aba001c2f0c3deddafee23d36",
+        "references/examples-and-placeholders.md": "4ebcc45c6e8deabfcd0889e826abff2974c149005969ade1b81a0c779af5912e",
+        "references/grammar-and-usage.md": "b19f24da953fd44145b19c5001948d9e026268556d3ea5e2caaaf6609ad42327",
+        "references/inclusive-language.md": "c0b90c133811872ff816a8dbefd77eb792c5131e399b1144129aadfd2dd7fbbe",
+        "references/links-and-references.md": "7e8da6f8cee3a6c7d936ada59172ed02f34446efd33b55b5791b4518ebc418e1",
+        "references/numbers-dates-units.md": "8d1c234d625fe5c28ba29442dc329a7a12b9e35e16607f2e9a9b513eb84a0bf4",
+        "references/principles.md": "7d6d8d0f4dbde9fd239a1ac0c0a7e72839cc56d4e59ac892b54e256dec4a7f28",
+        "references/procedures-and-ui.md": "57879d9269a06901760b42364ad6c9b8088adcf74a73aa99a55859b6e7c74d73",
+        "references/punctuation.md": "a6a770f906c6afd152ce79895deaa0e1037ae10eabe7e24f25801b3c7c058e51",
+        "references/text-formatting.md": "365546f5352f58a312a97c737cea2c67380d53911ede3cb3ed0f1ec20a8709e4",
+        "references/voice-and-tone.md": "b08a75d76a41fe02e4f13f52028df758d9719e6ca071481d9b14d09db4122437",
+        "references/word-list.md": "d978876f7b9a5f49396f0616ce0ea645e183790f52b657e3e6e00f0659bde218"
+      },
+      "license": "MIT",
+      "upstreamRef": "1e0080ccae211ab7677c1873b90bf0ce6fadc216",
+      "modifications": "Installed description and human-versus-agent writing boundaries retained."
+    },
+    {
+      "name": "heartbeat-loop",
+      "source": "codex/heartbeat-loop",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "origin": "Locally authored research-loop skill, October 2026",
+      "files": {
+        "SKILL.md": "28391b450e3a5dd91ed41c9cbdce042976b507090fb64b8ca563440796a480f3",
+        "references/scratchpad.md": "b8111ae5bcf210e4fc0191faf07fc0c284a2a1dd286baa48c79b006c023bbd1c"
+      }
+    },
+    {
+      "name": "cli",
+      "source": "codex/cli",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "origin": "https://justin.poehnelt.com/posts/rewrite-your-cli-for-ai-agents/",
+      "files": {
+        "SKILL.md": "79c0e235ebee7bdaee34b11660007a6d15b09cdabc3b89875634356ad1a89071",
+        "references/agent-cli-design-principles.md": "13e319026353a898387d8aa47ef68a767472d493f2b1df2bff66aaa14e21d0b6",
+        "references/agent-cli-test-plan.md": "1e46475e87d802082bf0fe75eebb2fdceae0ea49dbc1bb1cd56e14918c7ed710",
+        "references/context-output-guidelines.md": "9fc76b8dceeb2eb245980683d8c0cc21a633aa2ec628ea020322ee4821951841",
+        "references/implementation-checklist.md": "636e6dd042566a7648162643aaa98db4ea1c2b9f1e19f1c155ed65c13a81b6b8",
+        "references/schema-introspection-contract.md": "a0e54f55b313368841a30811b411ea268912db9b68441e414caf304a9f43c2ba",
+        "references/security-and-safety-rails.md": "65d9e048154214e1a240e37a6d1e0c1417be96269fdb11292d8a33fe7299e742",
+        "references/source-notes.md": "5ae0f8bd64e89892ef7c6d714a15880be894b76839657b225c5a1afecc706207"
+      },
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "coderlm",
+      "source": "codex/coderlm",
+      "agents": [
+        "codex"
+      ],
+      "origin": "https://github.com/CyrusNuevoDia/coderlm",
+      "files": {
+        "LICENSE": "544402ea5984a38f20c8eeb8d537e4198dfff60e976d3ada9a8aa0397ee7b093",
+        "SKILL.md": "744f864f779fad14b3f468f29200bd2bbfeb3570dd8542e65b2aabcb4ad8bdc7"
+      },
+      "license": "MIT",
+      "upstreamRef": "fe25df45c9f624626edfb59d92b80c904fb692db",
+      "modifications": "Agent-specific invocation and context-management instructions."
+    },
+    {
+      "name": "coderlm",
+      "source": "claude/coderlm",
+      "agents": [
+        "claude-code"
+      ],
+      "origin": "https://github.com/CyrusNuevoDia/coderlm",
+      "files": {
+        "LICENSE": "544402ea5984a38f20c8eeb8d537e4198dfff60e976d3ada9a8aa0397ee7b093",
+        "SKILL.md": "507f539ee8aaa1d9facc5e50823ff5db4b32769ffe64ac8d1965248c07a61767"
+      },
+      "license": "MIT",
+      "upstreamRef": "fe25df45c9f624626edfb59d92b80c904fb692db",
+      "modifications": "Agent-specific invocation and context-management instructions."
+    }
+  ]
+}
