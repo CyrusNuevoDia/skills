@@ -112,6 +112,14 @@
       ]
     },
     {
+      "name": "shaping",
+      "source": "rjs/shaping-skills/shaping#23e32c1ee2293595906d0d55f44424427afa7bac",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
       "name": "show-me",
       "source": "humanlayer/skills/plugins/show-me/skills/show-me#6ab9013a10c28f5046f7f999549cd5328a0b30d7",
       "agents": [

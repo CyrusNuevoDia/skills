@@ -464,6 +464,20 @@
         "GLOSSARY.md": "df0d042f2b69b8a952bd4b0e6904e2eb316f0203c1a5f09169da7f75a5575a61",
         "SKILL.md": "7c6ba7ec25bb2c0e173c52cdc2da878aef0b083ec19a9c1799934e480c8833cc"
       }
+    },
+    {
+      "name": "you-should-know",
+      "source": "codex/you-should-know",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "modifications": [
+        "Original portable implementation of a session observer, inspired by Claude Code\u2019s You Should Know feature."
+      ],
+      "files": {
+        "SKILL.md": "166856eed7af1dab4067f1ecc9cb161746aaa88807d00833c0d06e4f96947185"
+      }
     }
   ]
 }
