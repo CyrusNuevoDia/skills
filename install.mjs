@@ -1,6 +1,28 @@
 import { spawnSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { homedir } from 'node:os';
+import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+function hasHexApp() {
+  if (process.platform !== 'darwin') return false;
+
+  const bundleId = 'anomaly.hex';
+  const isHex = (app) => {
+    const plist = join(app, 'Contents', 'Info.plist');
+    return existsSync(plist) && spawnSync(
+      '/usr/libexec/PlistBuddy', ['-c', 'Print :CFBundleIdentifier', plist],
+      { encoding: 'utf8' },
+    ).stdout?.trim() === bundleId;
+  };
+  const standardLocations = ['/Applications/Hex.app', join(homedir(), 'Applications', 'Hex.app')];
+  if (standardLocations.some(isHex)) return true;
+
+  const { stdout } = spawnSync('/usr/bin/mdfind', [`kMDItemCFBundleIdentifier == '${bundleId}'`], {
+    encoding: 'utf8',
+  });
+  return stdout?.split('\n').filter(Boolean).some(isHex) ?? false;
+}
 
 const args = process.argv.slice(2);
 if (args.length > 1 || (args.length === 1 && !['--dry-run', '--help'].includes(args[0]))) {
@@ -16,11 +38,13 @@ const catalog = JSON.parse(readFileSync(new URL('./catalog.json', import.meta.ur
 const upstream = JSON.parse(readFileSync(new URL('./upstream.json', import.meta.url), 'utf8'));
 const installations = [
   ...upstream.skills,
-  ...catalog.skills.map(({ source, name, agents }) => ({
-    source: fileURLToPath(new URL(source, import.meta.url)),
-    name,
-    agents,
-  })),
+  ...catalog.skills
+    .filter(({ requiresHex }) => !requiresHex || hasHexApp())
+    .map(({ source, name, agents }) => ({
+      source: fileURLToPath(new URL(source, import.meta.url)),
+      name,
+      agents,
+    })),
 ];
 const [runner, ...runnerArgs] = process.versions.bun ? ['bunx'] : ['npx', '--yes'];
 

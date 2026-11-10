@@ -14,6 +14,8 @@ bun run install.mjs
 
 If you use Node.js and npm, run `node install.mjs` instead. Add `--dry-run` to see the install commands before running them. The installer uses the skills CLI to copy the packages into the global Codex and Claude Code skill directories. It restores the custom variants from [the catalog](catalog.json) and fetches the [third-party collection](upstream.json) at pinned Git revisions. Rerunning replaces copies of the skills listed in those files, so save any edits you made to an installed copy first.
 
+The installer adds the Scrawl skill when it detects the Hex app. If you install Hex later, rerun the installer to add the skill.
+
 ## Install selected custom skills
 
 Use the Codex source for Codex and the Claude source for Claude-specific variants. Use `--copy` so the two agents can keep different versions of the same skill.

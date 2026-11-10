@@ -1,0 +1,4 @@
+interface:
+  display_name: "Calldiff"
+  short_description: "Explain code changes through call-flow diffs"
+  default_prompt: "Use $calldiff to explain this code change as a behavioral call-graph diff."

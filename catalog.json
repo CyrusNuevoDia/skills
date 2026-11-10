@@ -1,6 +1,63 @@
 {
   "skills": [
     {
+      "name": "be-ambitious",
+      "source": "codex/be-ambitious",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "origin": "https://github.com/robonuggets/be-ambitious",
+      "license": "MIT",
+      "files": {
+        "LICENSE": "210b65e17b4241e0fa3e952d1dde87d40fa7f89c62b237483e6c39870b45e550",
+        "SKILL.md": "a3fd7fa62038a885e458808b6f6926b9df647720527316593bc2f8b2b3f61b6b"
+      }
+    },
+    {
+      "name": "build",
+      "source": "codex/build",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "728ab3e169d7b421f483edd1a179387134fed2eeb39aa6cc60e8a6462f439550"
+      }
+    },
+    {
+      "name": "calldiff",
+      "source": "codex/calldiff",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "8112641a7ad997132b8d4171cbcf0a508d3a00df9219ff3065120a40952114b3",
+        "agents/openai.yaml": "a1795d73adc95d34dd0385f2f4f9e8d88a39cb4590b1fcaa192d4993bdc0d5ee"
+      }
+    },
+    {
+      "name": "casting",
+      "source": "claude/casting",
+      "agents": [
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "9e6d73792bf42c6758c6d49a9e3d9618846bf3425e6adafe0bcc6c1ad8ba0f51"
+      }
+    },
+    {
+      "name": "casting",
+      "source": "codex/casting",
+      "agents": [
+        "codex"
+      ],
+      "files": {
+        "SKILL.md": "166490349cbdeba045e6d8622da5ae32e3cc50f7f7cc91a561e6e4f7236a97eb"
+      }
+    },
+    {
       "name": "ceo",
       "source": "claude/ceo",
       "agents": [
@@ -83,6 +140,30 @@
       "modifications": "Agent-specific invocation and context-management instructions."
     },
     {
+      "name": "copywriting",
+      "source": "codex/copywriting",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "e792b0ff9ff7f8b502eeb7486ecc76322b6a8d1593245f0ae40fef51dc235f69"
+      }
+    },
+    {
+      "name": "dataviz",
+      "source": "codex/dataviz",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "3a1cfac770268fabceb6dbbb863b79eb3f73d3a874792827a0613ebd4f77497a",
+        "references/analytical-design.md": "539f9fcce2f8a5c2fa8ada1ee058665461c0d5f74f03ad65df6ef7f528c224db",
+        "references/tufte-principles.md": "e45dbf7a01e6c4422717fdb161c01c4bad6aa56d698e60c53e9d29c7af0ba7b8"
+      }
+    },
+    {
       "name": "generate-diffmap",
       "source": "codex/generate-diffmap",
       "agents": [
@@ -101,6 +182,17 @@
       }
     },
     {
+      "name": "goal-fun",
+      "source": "codex/goal-fun",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "e56da5806b8b60368b2bacb137a6b1a61e1a539b9bf6a75fefe7a5d5c1c3dcd3"
+      }
+    },
+    {
       "name": "heartbeat-loop",
       "source": "codex/heartbeat-loop",
       "agents": [
@@ -111,6 +203,17 @@
       "files": {
         "SKILL.md": "28391b450e3a5dd91ed41c9cbdce042976b507090fb64b8ca563440796a480f3",
         "references/scratchpad.md": "b8111ae5bcf210e4fc0191faf07fc0c284a2a1dd286baa48c79b006c023bbd1c"
+      }
+    },
+    {
+      "name": "make",
+      "source": "codex/make",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "73694f3e8c4e5a3678138a75587e5e9385161058234e2e51df538819a6817c0d"
       }
     },
     {
@@ -146,6 +249,17 @@
       }
     },
     {
+      "name": "plan-goal",
+      "source": "codex/plan-goal",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "59aabf50f1519f8972ec1ac0d779e179b92a679ae4c3b7923088c3ec748f4f8b"
+      }
+    },
+    {
       "name": "posthog",
       "source": "codex/posthog",
       "agents": [
@@ -160,6 +274,108 @@
         "LICENSE.txt": "2690c4c87c1ee0753f87ee09a57e333ac66a464c6422fe22add037649ffb860e",
         "SKILL.md": "8076fcfcfa6d43b07e07da3ac6362d7d1617a60f42d95f2c42a7f4bbd034e1d4",
         "agents/openai.yaml": "56ccc4527811f48fb186be0bd4ff36f972cc6f4472403d5dc9334dbeaffa03e8"
+      }
+    },
+    {
+      "name": "ratchet-files",
+      "source": "codex/ratchet-files",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "5d5be34be083ec61df0d7672c0289476054195967af79ca22a570e6c9405a29e",
+        "scripts/check-file-size.mjs": "6e1fc8bc8b814f7c390275e04b148a9f12887f81bd7067f649049834e99e5cbc"
+      }
+    },
+    {
+      "name": "recruit",
+      "source": "codex/recruit",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "d8429c08b49c8500a18e40cbc85070500a36bd1e459699c1dda195a24e9bb840"
+      }
+    },
+    {
+      "name": "scrawl",
+      "source": "codex/scrawl",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "requiresHex": true,
+      "files": {
+        "SKILL.md": "1ff99adc4e95305eeebfcfaa7f35c6f8c8e86055b192abeadbe522adae66f4ab"
+      }
+    },
+    {
+      "name": "storytelling",
+      "source": "claude/storytelling",
+      "agents": [
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "36429e8d0ee62d9e880e47613334d0c6f199e37e97c01bbaa204c75756a4d59c"
+      }
+    },
+    {
+      "name": "storytelling",
+      "source": "codex/storytelling",
+      "agents": [
+        "codex"
+      ],
+      "files": {
+        "SKILL.md": "ecc76d40a2db220a04eb29fec53b180e01d4a9b12213799c0a59804f07e15d70"
+      }
+    },
+    {
+      "name": "subagent",
+      "source": "claude/subagent",
+      "agents": [
+        "claude-code"
+      ],
+      "files": {
+        "README.md": "216e216cf6899066bbb913469f42f08f84f2a65117cf6d6ef37b0a0c829a5fc4",
+        "SKILL.md": "e0f9a5345a84de38764585cb8a3eb705fafedc5849e76a128136f98630c432e4",
+        "agents/openai.yaml": "375339d6eb3b239f0790cd06dd1fe27bac064e20a9f1d5d47b1cb8617d5b2362",
+        "resources/references/codex-exec.md": "a64500f76b89b314116ff49e23370b73764ccfc7943ec1842364ae8206a3c2b1",
+        "scripts/run.sh": "57eaf2deba7d4b8742ffda4a122bad6bd9f1be0199dbbaf4aca7fe9418267b2f"
+      }
+    },
+    {
+      "name": "treg",
+      "source": "codex/treg",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "8e3de4b749fbf115415009884b5cd9b66e8d09ec9d5db0b8c9fc30fef706740f"
+      }
+    },
+    {
+      "name": "tutor",
+      "source": "codex/tutor",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "cb5c293ace82686ea604bfc1c5a1d082203a284db30c061af358a074f955283a"
+      }
+    },
+    {
+      "name": "ui-hillclimb",
+      "source": "codex/ui-hillclimb",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "b20c77ad30379b394ff1a6ad5d0ea70f844c2aab0c295742dd48848344c8deec"
       }
     },
     {
@@ -184,6 +400,17 @@
         "icons.md": "74cc78322874df4e2286bb0f5835d68114f74be1c94f993c94f6af692f44733b",
         "performance.md": "e4bc3c90d6e0281d295e2e7e39d545fb9abd8a67667b0c10e589eda8115e5b1e",
         "surfaces.md": "5508a7caf07ae8de616e7d83e282d4a08c026dd7a2d3cf54979609e4e0301048"
+      }
+    },
+    {
+      "name": "ultragoal",
+      "source": "codex/ultragoal",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "4d95edad374a00c504898f6e68ea096e2c5cd55b52ab9e5412f268e0adb2f953"
       }
     },
     {
@@ -214,6 +441,29 @@
       "license": "MIT",
       "upstreamRef": "1e0080ccae211ab7677c1873b90bf0ce6fadc216",
       "modifications": "Installed description and human-versus-agent writing boundaries retained."
+    },
+    {
+      "name": "web-access",
+      "source": "codex/web-access",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "00557d7521f24da365e22196dde965ab6ad0714750f3e5f898da4db9e5731cd3"
+      }
+    },
+    {
+      "name": "writing-great-skills",
+      "source": "codex/writing-great-skills",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "GLOSSARY.md": "df0d042f2b69b8a952bd4b0e6904e2eb316f0203c1a5f09169da7f75a5575a61",
+        "SKILL.md": "7c6ba7ec25bb2c0e173c52cdc2da878aef0b083ec19a9c1799934e480c8833cc"
+      }
     }
   ]
 }
