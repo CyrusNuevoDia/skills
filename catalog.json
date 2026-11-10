@@ -1,6 +1,192 @@
 {
   "skills": [
     {
+      "name": "ceo",
+      "source": "claude/ceo",
+      "agents": [
+        "claude-code"
+      ],
+      "origin": "https://github.com/garrytan/gstack",
+      "license": "MIT",
+      "modifications": [
+        "Preserves the locally adapted skill for the selected agents."
+      ],
+      "files": {
+        "LICENSE": "e56fbb5b3d95756f3fa1cfefa24732ec79f18ece1ad08a4e79e00df57e8b198c",
+        "SKILL.md": "41bd61839cb7e9cecca2b2b00dfd52135ad3fcd32df7e0fbf207d76b82c50881"
+      }
+    },
+    {
+      "name": "ceo",
+      "source": "codex/ceo",
+      "agents": [
+        "codex"
+      ],
+      "origin": "https://github.com/garrytan/gstack",
+      "license": "MIT",
+      "modifications": [
+        "Preserves the locally adapted skill for the selected agents."
+      ],
+      "files": {
+        "LICENSE": "e56fbb5b3d95756f3fa1cfefa24732ec79f18ece1ad08a4e79e00df57e8b198c",
+        "SKILL.md": "64ce8f4ac8843fc215508a699c81129963eaba62a0e3764a79c0a37af91c1680"
+      }
+    },
+    {
+      "name": "cli",
+      "source": "codex/cli",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "origin": "https://justin.poehnelt.com/posts/rewrite-your-cli-for-ai-agents/",
+      "files": {
+        "SKILL.md": "79c0e235ebee7bdaee34b11660007a6d15b09cdabc3b89875634356ad1a89071",
+        "references/agent-cli-design-principles.md": "13e319026353a898387d8aa47ef68a767472d493f2b1df2bff66aaa14e21d0b6",
+        "references/agent-cli-test-plan.md": "1e46475e87d802082bf0fe75eebb2fdceae0ea49dbc1bb1cd56e14918c7ed710",
+        "references/context-output-guidelines.md": "9fc76b8dceeb2eb245980683d8c0cc21a633aa2ec628ea020322ee4821951841",
+        "references/implementation-checklist.md": "636e6dd042566a7648162643aaa98db4ea1c2b9f1e19f1c155ed65c13a81b6b8",
+        "references/schema-introspection-contract.md": "a0e54f55b313368841a30811b411ea268912db9b68441e414caf304a9f43c2ba",
+        "references/security-and-safety-rails.md": "65d9e048154214e1a240e37a6d1e0c1417be96269fdb11292d8a33fe7299e742",
+        "references/source-notes.md": "5ae0f8bd64e89892ef7c6d714a15880be894b76839657b225c5a1afecc706207"
+      },
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "coderlm",
+      "source": "claude/coderlm",
+      "agents": [
+        "claude-code"
+      ],
+      "origin": "https://github.com/CyrusNuevoDia/coderlm",
+      "files": {
+        "LICENSE": "544402ea5984a38f20c8eeb8d537e4198dfff60e976d3ada9a8aa0397ee7b093",
+        "SKILL.md": "507f539ee8aaa1d9facc5e50823ff5db4b32769ffe64ac8d1965248c07a61767"
+      },
+      "license": "MIT",
+      "upstreamRef": "fe25df45c9f624626edfb59d92b80c904fb692db",
+      "modifications": "Agent-specific invocation and context-management instructions."
+    },
+    {
+      "name": "coderlm",
+      "source": "codex/coderlm",
+      "agents": [
+        "codex"
+      ],
+      "origin": "https://github.com/CyrusNuevoDia/coderlm",
+      "files": {
+        "LICENSE": "544402ea5984a38f20c8eeb8d537e4198dfff60e976d3ada9a8aa0397ee7b093",
+        "SKILL.md": "744f864f779fad14b3f468f29200bd2bbfeb3570dd8542e65b2aabcb4ad8bdc7"
+      },
+      "license": "MIT",
+      "upstreamRef": "fe25df45c9f624626edfb59d92b80c904fb692db",
+      "modifications": "Agent-specific invocation and context-management instructions."
+    },
+    {
+      "name": "generate-diffmap",
+      "source": "codex/generate-diffmap",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "origin": "https://github.com/tanishqkancharla/diffmap",
+      "license": "MIT",
+      "modifications": [
+        "Preserves the locally adapted skill for the selected agents."
+      ],
+      "files": {
+        "LICENSE": "f28db1ec9f6974646572a0f3d08b3758b5cc31a13f7793bb90a75a5f934ae40f",
+        "SKILL.md": "6ddd20b7d90530d22e31e29e022c43cb24d8a582eab641b34585fd53e6bde641",
+        "agents/openai.yaml": "f2fede3d1638e86b991b8e0f16b5ece2e59cc3aa94f325c529ca821aec6dcbf5"
+      }
+    },
+    {
+      "name": "heartbeat-loop",
+      "source": "codex/heartbeat-loop",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "origin": "Locally authored research-loop skill, October 2026",
+      "files": {
+        "SKILL.md": "28391b450e3a5dd91ed41c9cbdce042976b507090fb64b8ca563440796a480f3",
+        "references/scratchpad.md": "b8111ae5bcf210e4fc0191faf07fc0c284a2a1dd286baa48c79b006c023bbd1c"
+      }
+    },
+    {
+      "name": "office-hours",
+      "source": "claude/office-hours",
+      "agents": [
+        "claude-code"
+      ],
+      "origin": "https://github.com/garrytan/gstack",
+      "license": "MIT",
+      "modifications": [
+        "Preserves the locally adapted skill for the selected agents."
+      ],
+      "files": {
+        "LICENSE": "e56fbb5b3d95756f3fa1cfefa24732ec79f18ece1ad08a4e79e00df57e8b198c",
+        "SKILL.md": "e74ec4224f3aacb3a2d01b8a298b1ed04d2749d0de3934ea7c04a461622ab33c"
+      }
+    },
+    {
+      "name": "office-hours",
+      "source": "codex/office-hours",
+      "agents": [
+        "codex"
+      ],
+      "origin": "https://github.com/garrytan/gstack",
+      "license": "MIT",
+      "modifications": [
+        "Preserves the locally adapted skill for the selected agents."
+      ],
+      "files": {
+        "LICENSE": "e56fbb5b3d95756f3fa1cfefa24732ec79f18ece1ad08a4e79e00df57e8b198c",
+        "SKILL.md": "d127de8c893005c8e8499ef5a459b32df72e63d9f2e84ef7e6f020fa0688f976"
+      }
+    },
+    {
+      "name": "posthog",
+      "source": "codex/posthog",
+      "agents": [
+        "codex"
+      ],
+      "origin": "https://posthog.com/",
+      "license": "MIT",
+      "modifications": [
+        "Routes through Executor MCP and uses a workspace-neutral configuration."
+      ],
+      "files": {
+        "LICENSE.txt": "2690c4c87c1ee0753f87ee09a57e333ac66a464c6422fe22add037649ffb860e",
+        "SKILL.md": "8076fcfcfa6d43b07e07da3ac6362d7d1617a60f42d95f2c42a7f4bbd034e1d4",
+        "agents/openai.yaml": "56ccc4527811f48fb186be0bd4ff36f972cc6f4472403d5dc9334dbeaffa03e8"
+      }
+    },
+    {
+      "name": "ui-standards",
+      "source": "codex/ui-standards",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "origin": "https://github.com/jakubkrehel/skills",
+      "license": "MIT",
+      "modifications": [
+        "Preserves the locally adapted skill for the selected agents."
+      ],
+      "files": {
+        "LICENSE": "ed1dfe988fc40511b4845ccd9050a143a2002fee3bedc8064c47fa342b5d8d4f",
+        "SKILL.md": "725d540fd8fb6ce6cadf6b506ed2740a0b9cbaca4a9d52d7a19572bd6f3130c7",
+        "agents/openai.yaml": "799e0b58bded32edf5c217f97e08c364660ec24234978b2e3f7dee1868bea871",
+        "animations.md": "3639d6ba59ef714af1d85bf2cca8174f8c040cf3f39bff24071beca57a1870e9",
+        "enter-exit.md": "67204cc65c67c916674b9d8b27abec7715f110ffcae137aecca8650ded485cbf",
+        "icon-transitions.md": "4cee1e74c2618ae68196bdb43fb7906532883f174426cf4a83b31de093cbadf7",
+        "icons.md": "74cc78322874df4e2286bb0f5835d68114f74be1c94f993c94f6af692f44733b",
+        "performance.md": "e4bc3c90d6e0281d295e2e7e39d545fb9abd8a67667b0c10e589eda8115e5b1e",
+        "surfaces.md": "5508a7caf07ae8de616e7d83e282d4a08c026dd7a2d3cf54979609e4e0301048"
+      }
+    },
+    {
       "name": "wat",
       "source": "codex/wat",
       "agents": [
@@ -28,69 +214,6 @@
       "license": "MIT",
       "upstreamRef": "1e0080ccae211ab7677c1873b90bf0ce6fadc216",
       "modifications": "Installed description and human-versus-agent writing boundaries retained."
-    },
-    {
-      "name": "heartbeat-loop",
-      "source": "codex/heartbeat-loop",
-      "agents": [
-        "codex",
-        "claude-code"
-      ],
-      "origin": "Locally authored research-loop skill, October 2026",
-      "files": {
-        "SKILL.md": "28391b450e3a5dd91ed41c9cbdce042976b507090fb64b8ca563440796a480f3",
-        "references/scratchpad.md": "b8111ae5bcf210e4fc0191faf07fc0c284a2a1dd286baa48c79b006c023bbd1c"
-      }
-    },
-    {
-      "name": "cli",
-      "source": "codex/cli",
-      "agents": [
-        "codex",
-        "claude-code"
-      ],
-      "origin": "https://justin.poehnelt.com/posts/rewrite-your-cli-for-ai-agents/",
-      "files": {
-        "SKILL.md": "79c0e235ebee7bdaee34b11660007a6d15b09cdabc3b89875634356ad1a89071",
-        "references/agent-cli-design-principles.md": "13e319026353a898387d8aa47ef68a767472d493f2b1df2bff66aaa14e21d0b6",
-        "references/agent-cli-test-plan.md": "1e46475e87d802082bf0fe75eebb2fdceae0ea49dbc1bb1cd56e14918c7ed710",
-        "references/context-output-guidelines.md": "9fc76b8dceeb2eb245980683d8c0cc21a633aa2ec628ea020322ee4821951841",
-        "references/implementation-checklist.md": "636e6dd042566a7648162643aaa98db4ea1c2b9f1e19f1c155ed65c13a81b6b8",
-        "references/schema-introspection-contract.md": "a0e54f55b313368841a30811b411ea268912db9b68441e414caf304a9f43c2ba",
-        "references/security-and-safety-rails.md": "65d9e048154214e1a240e37a6d1e0c1417be96269fdb11292d8a33fe7299e742",
-        "references/source-notes.md": "5ae0f8bd64e89892ef7c6d714a15880be894b76839657b225c5a1afecc706207"
-      },
-      "license": "CC-BY-SA-4.0"
-    },
-    {
-      "name": "coderlm",
-      "source": "codex/coderlm",
-      "agents": [
-        "codex"
-      ],
-      "origin": "https://github.com/CyrusNuevoDia/coderlm",
-      "files": {
-        "LICENSE": "544402ea5984a38f20c8eeb8d537e4198dfff60e976d3ada9a8aa0397ee7b093",
-        "SKILL.md": "744f864f779fad14b3f468f29200bd2bbfeb3570dd8542e65b2aabcb4ad8bdc7"
-      },
-      "license": "MIT",
-      "upstreamRef": "fe25df45c9f624626edfb59d92b80c904fb692db",
-      "modifications": "Agent-specific invocation and context-management instructions."
-    },
-    {
-      "name": "coderlm",
-      "source": "claude/coderlm",
-      "agents": [
-        "claude-code"
-      ],
-      "origin": "https://github.com/CyrusNuevoDia/coderlm",
-      "files": {
-        "LICENSE": "544402ea5984a38f20c8eeb8d537e4198dfff60e976d3ada9a8aa0397ee7b093",
-        "SKILL.md": "507f539ee8aaa1d9facc5e50823ff5db4b32769ffe64ac8d1965248c07a61767"
-      },
-      "license": "MIT",
-      "upstreamRef": "fe25df45c9f624626edfb59d92b80c904fb692db",
-      "modifications": "Agent-specific invocation and context-management instructions."
     }
   ]
 }

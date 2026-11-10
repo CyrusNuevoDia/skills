@@ -2,22 +2,28 @@
 
 Personal skills for Codex and Claude Code. Install them with the [skills CLI](https://github.com/vercel-labs/skills), using either `bunx` or `npx`.
 
-## Install
+## Restore on a new computer
 
-Install the Codex collection:
-
-```sh
-bunx skills add CyrusNuevoDia/skills/codex -g -a codex
-```
-
-For Claude Code, install the portable skills first, then the Claude-specific collection:
+Clone this repository and run the installer with Bun.
 
 ```sh
-bunx skills add CyrusNuevoDia/skills/codex -g -a claude-code --skill cli heartbeat-loop wat
-bunx skills add CyrusNuevoDia/skills/claude -g -a claude-code
+git clone https://github.com/CyrusNuevoDia/skills.git
+cd skills
+bun run install.mjs
 ```
 
-Replace `bunx` with `npx` to use npm. Add `--list` to preview a collection without installing, or `--skill NAME` to select one skill. Run `bunx skills ls -g` to inspect installed skills.
+If you use Node.js and npm, run `node install.mjs` instead. Add `--dry-run` to see the install commands before running them. The installer uses the skills CLI to copy the packages into the global Codex and Claude Code skill directories. It restores the custom variants from [the catalog](catalog.json) and fetches the [third-party collection](upstream.json) at pinned Git revisions. Rerunning replaces copies of the skills listed in those files, so save any edits you made to an installed copy first.
+
+## Install selected custom skills
+
+Use the Codex source for Codex and the Claude source for Claude-specific variants. Use `--copy` so the two agents can keep different versions of the same skill.
+
+```sh
+bunx skills add CyrusNuevoDia/skills/codex -g -a codex --skill coderlm --copy
+bunx skills add CyrusNuevoDia/skills/claude -g -a claude-code --skill coderlm --copy
+```
+
+Replace `bunx` with `npx` to use npm. Use `--list` to preview a collection and `bunx skills ls -g` to inspect installed skills. The catalog lists the agents supported by each package.
 
 Use the explicit `codex/` and `claude/` source paths. The CLI deduplicates skills by their frontmatter name, so a repository-root install keeps only one of two agent-specific variants. The `--agent` flag chooses the destination; it doesn't choose a source variant.
 
@@ -27,18 +33,7 @@ To pin a source revision, use a full Git commit SHA:
 bunx skills add 'CyrusNuevoDia/skills/codex#COMMIT_SHA' -g -a codex
 ```
 
-For a local checkout, replace the GitHub source with `./codex` or `./claude`. Normal CLI installs copy the source into the installed skill directory; editing this checkout doesn't update that copy automatically. The private setup repository can instead link individual skill directories to this checkout.
-
-## Contents
-
-| Skill | Purpose | Agents |
-| --- | --- | --- |
-| `cli` | Design command-line interfaces that agents can use reliably. | Codex and Claude Code |
-| `coderlm` | Explore large codebases with bounded output and recursive decomposition. | Separate Codex and Claude Code variants |
-| `heartbeat-loop` | Run resumable research across recurring heartbeats. | Codex and Claude Code, when scheduling tools are available |
-| `wat` | Write clear prose for humans while keeping agent instructions precise. | Codex and Claude Code |
-
-[`catalog.json`](catalog.json) maps each source directory to its supported agents and records provenance, licenses, and file hashes. Third-party skills installed without substantive customization belong in setup's upstream installation manifest rather than this collection.
+For a local checkout, replace the GitHub source with `./codex` or `./claude`. Each installed copy stays at the version you installed until you run the installer again.
 
 ## Attribution and licenses
 

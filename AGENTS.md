@@ -10,4 +10,6 @@ Update `catalog.json` when a package changes, including its relative file paths 
 
 Verify discovery with `skills add ./codex --list` and `skills add ./claude --list` using the installed skills CLI. Listing must not install or alter global skills. Check that all supporting resources exist, all catalog hashes match, and no secrets or private paths appear in the staged diff. Do not add package installation hooks or generated runtime files.
 
+Keep third-party installs in `upstream.json` with public source paths, pinned Git revisions, and explicit destination agents. Use `bun run install.mjs --dry-run` to review the restore commands without changing the machine.
+
 This codebase is yours: what it's for and how it's built are your call, and you'll keep building on it.

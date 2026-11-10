@@ -1,0 +1,203 @@
+{
+  "skills": [
+    {
+      "name": "audit-choices",
+      "source": "dzhng/skills/skills/engineering/audit-choices#dbb1aa516036a67e01f4d7a156002c99a6ed369b",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "breadboarding",
+      "source": "rjs/shaping-skills/breadboarding#84cc19df647b4956f0438ca9a1b793e031297c7d",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "domain-modeling",
+      "source": "mattpocock/skills/skills/engineering/domain-modeling#54bc6b604075c18293d38e9e294a2c96f365f104",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "emil-design-eng",
+      "source": "emilkowalski/skills/skills/emil-design-eng#86cf9f7d91c6de0215cbb2e36fccfe6c8127a841",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "grill-me",
+      "source": "mattpocock/skills/skills/productivity/grill-me#fcf0071560d32913c9d4f820e0d7ca467c881619",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "grill-with-docs",
+      "source": "mattpocock/skills/skills/engineering/grill-with-docs#447ca70872026d5b79d6073a546dac082117fed7",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "grilling",
+      "source": "mattpocock/skills/skills/productivity/grilling#85f83d3fde1d3a90d5c9a657f6998c79a6c37308",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "handoff",
+      "source": "mattpocock/skills/skills/productivity/handoff#d28dfdc39beadc3142a33359b5cfa4765dcbd0bc",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "improve",
+      "source": "shadcn/improve/skills/improve#0c66862bd7bd5d12863e7f59d0f2c161f0913d8c",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "source": "mattpocock/skills/skills/engineering/improve-codebase-architecture#be55a7970319ede7965edbb02b5e41cba1ca82c9",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "merge-risk",
+      "source": "warpdotdev/common-skills/.agents/skills/merge-risk#8792394ff1b655e0af451b8fabb68ef0cfcbd208",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "migrate-to-codex",
+      "source": "openai/skills/skills/.curated/migrate-to-codex#45d05d75363abf13f99d09e899d61e07b8010685",
+      "agents": [
+        "codex"
+      ]
+    },
+    {
+      "name": "prototype",
+      "source": "mattpocock/skills/skills/engineering/prototype#6bcbcb09e2f1ed5fa20b4e890c732ecbb58c6b64",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "research",
+      "source": "mattpocock/skills/skills/engineering/research#697d4ce9742da558fd1ba6697c8e9775e2e302dd",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "show-me",
+      "source": "humanlayer/skills/plugins/show-me/skills/show-me#6ab9013a10c28f5046f7f999549cd5328a0b30d7",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "social",
+      "source": "usesocial/skill/skills/social#51e8dd8c34c39b9136943368fbb1d1a8933550ce",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "stageshow",
+      "source": "benjitaylor/skills/stageshow#802057409787133703c56001080169e347305572",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "tdd",
+      "source": "mattpocock/skills/skills/engineering/tdd#ee8bae40062cd6b435073368ed0c540f48c35862",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "teach",
+      "source": "mattpocock/skills/skills/productivity/teach#697d4ce9742da558fd1ba6697c8e9775e2e302dd",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "test-audit",
+      "source": "openclaw/openclaw/.agents/skills/test-audit#71b5563397e95d67ad902f79a717559519010ac8",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "untangle-codebase",
+      "source": "caldoai/skills/skills/untangle-codebase#f3cf47774975a7d9fca45730babf4ff7ad765ada",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "wizard",
+      "source": "mattpocock/skills/skills/engineering/wizard#cb7db0eeb6270b5534128dafcc1a59e3e7ab0472",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "writing-beats",
+      "source": "mattpocock/skills/skills/in-progress/writing-beats#697d4ce9742da558fd1ba6697c8e9775e2e302dd",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "writing-fragments",
+      "source": "mattpocock/skills/skills/in-progress/writing-fragments#697d4ce9742da558fd1ba6697c8e9775e2e302dd",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "writing-shape",
+      "source": "mattpocock/skills/skills/in-progress/writing-shape#697d4ce9742da558fd1ba6697c8e9775e2e302dd",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    }
+  ]
+}
