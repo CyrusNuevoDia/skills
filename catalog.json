@@ -379,6 +379,25 @@
       }
     },
     {
+      "name": "ui-prototype",
+      "source": "codex/ui-prototype",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "origin": "https://github.com/emilkowalski/skills",
+      "license": "MIT",
+      "upstreamRef": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "modifications": [
+        "Renamed from prototype to avoid a collision with the existing skill."
+      ],
+      "files": {
+        "LICENSE": "4ff5bdb7887ec1435c9cab0e8d1a7caee704d894d65c2a008ccc68b1cc2f260b",
+        "PICKER.md": "31a55eec94715cc79942e91e172e539e3031dcd5e2e5ee7c1446cf2caee960a6",
+        "SKILL.md": "3577d74ff6ee38ed3aa67b9628d5fb28aa4baf980eae021de35e8043f91af930"
+      }
+    },
+    {
       "name": "ui-standards",
       "source": "codex/ui-standards",
       "agents": [
@@ -473,7 +492,7 @@
         "claude-code"
       ],
       "modifications": [
-        "Original portable implementation of a session observer, inspired by Claude Code\u2019s You Should Know feature."
+        "Original portable implementation of a session observer, inspired by Claude Code’s You Should Know feature."
       ],
       "files": {
         "SKILL.md": "166856eed7af1dab4067f1ecc9cb161746aaa88807d00833c0d06e4f96947185"
