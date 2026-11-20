@@ -39,18 +39,18 @@ For a local checkout, replace the GitHub source with `./codex` or `./claude`. Ea
 
 ## Install as a Claude Code plugin
 
-The repository is also a Claude Code plugin marketplace. Its one plugin, `cyrus-skills`, bundles the Claude Code skills from [the catalog](catalog.json), using the `claude/` variant where one exists. In Claude Code, run:
+The repository is also a Claude Code plugin marketplace. Its one plugin, `cy`, bundles the Claude Code skills from [the catalog](catalog.json), using the `claude/` variant where one exists. In Claude Code, run:
 
 ```sh
 /plugin marketplace add CyrusNuevoDia/skills
-/plugin install cyrus-skills@cyrus-skills
+/plugin install cy@cyrus-skills
 ```
 
-From a shell, use `claude plugin marketplace add CyrusNuevoDia/skills` and `claude plugin install cyrus-skills@cyrus-skills`. Plugin skills are namespaced, so `ceo` runs as `/cyrus-skills:ceo`.
+From a shell, use `claude plugin marketplace add CyrusNuevoDia/skills` and `claude plugin install cy@cyrus-skills`. Plugin skills are namespaced, so `ceo` runs as `/cy:ceo`.
 
 The plugin leaves out the [third-party collection](upstream.json), which isn't stored here, and Scrawl, which needs the Hex app on the same machine. Use the installer for those.
 
-The plugin has no version number, so each commit is a new version. Auto-update is off by default for third-party marketplaces. Turn it on in `/plugin` under Marketplaces, or run `claude plugin marketplace update cyrus-skills` and then `claude plugin update cyrus-skills@cyrus-skills`. Restart Claude Code to load the update.
+The plugin has no version number, so each commit is a new version. Auto-update is off by default for third-party marketplaces. Turn it on in `/plugin` under Marketplaces, or run `claude plugin marketplace update cyrus-skills` and then `claude plugin update cy@cyrus-skills`. Restart Claude Code to load the update.
 
 A plugin installed this way stays on that machine. Cloud sessions, including Claude Code on the web, don't load plugins installed on your machine or ones a repository's `.claude/settings.json` turns on.
 

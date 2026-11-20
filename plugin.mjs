@@ -41,7 +41,7 @@ const manifest = {
   owner,
   plugins: [
     {
-      name: 'cyrus-skills',
+      name: 'cy',
       source: '.',
       description: "Cyrus's personal Claude Code skills, the same set install.mjs puts in ~/.claude/skills.",
       author: owner,
