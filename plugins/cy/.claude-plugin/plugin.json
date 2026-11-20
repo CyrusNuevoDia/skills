@@ -1,0 +1,11 @@
+{
+  "name": "cy",
+  "version": "1.0.0-60828b38b6c0",
+  "description": "Cyrus's personal Claude Code skills, the same set install.mjs puts in ~/.claude/skills.",
+  "author": {
+    "name": "Cyrus",
+    "url": "https://github.com/CyrusNuevoDia"
+  },
+  "homepage": "https://github.com/CyrusNuevoDia/skills",
+  "repository": "https://github.com/CyrusNuevoDia/skills"
+}
