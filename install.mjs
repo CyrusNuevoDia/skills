@@ -35,17 +35,14 @@ if (args[0] === '--help') {
 }
 
 const catalog = JSON.parse(readFileSync(new URL('./catalog.json', import.meta.url), 'utf8'));
-const upstream = JSON.parse(readFileSync(new URL('./upstream.json', import.meta.url), 'utf8'));
-const installations = [
-  ...upstream.skills,
-  ...catalog.skills
-    .filter(({ requiresHex }) => !requiresHex || hasHexApp())
-    .map(({ source, name, agents }) => ({
-      source: fileURLToPath(new URL(source, import.meta.url)),
-      name,
-      agents,
-    })),
-];
+// Third-party skills are vendored under upstream/ and listed in the catalog like the rest.
+const installations = catalog.skills
+  .filter(({ requiresHex }) => !requiresHex || hasHexApp())
+  .map(({ source, name, agents }) => ({
+    source: fileURLToPath(new URL(source, import.meta.url)),
+    name,
+    agents,
+  }));
 const [runner, ...runnerArgs] = process.versions.bun ? ['bunx'] : ['npx', '--yes'];
 
 for (const { source, name, agents } of installations) {

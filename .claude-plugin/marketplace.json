@@ -8,45 +8,8 @@
   "plugins": [
     {
       "name": "cy",
-      "source": ".",
-      "description": "Cyrus's personal Claude Code skills, the same set install.mjs puts in ~/.claude/skills.",
-      "author": {
-        "name": "Cyrus",
-        "url": "https://github.com/CyrusNuevoDia"
-      },
-      "homepage": "https://github.com/CyrusNuevoDia/skills",
-      "repository": "https://github.com/CyrusNuevoDia/skills",
-      "skills": [
-        "./claude/casting",
-        "./claude/ceo",
-        "./claude/coderlm",
-        "./claude/office-hours",
-        "./claude/storytelling",
-        "./claude/subagent",
-        "./codex/be-ambitious",
-        "./codex/build",
-        "./codex/calldiff",
-        "./codex/cli",
-        "./codex/copywriting",
-        "./codex/dataviz",
-        "./codex/generate-diffmap",
-        "./codex/goal-fun",
-        "./codex/heartbeat-loop",
-        "./codex/make",
-        "./codex/plan-goal",
-        "./codex/ratchet-files",
-        "./codex/recruit",
-        "./codex/treg",
-        "./codex/tutor",
-        "./codex/ui-hillclimb",
-        "./codex/ui-prototype",
-        "./codex/ui-standards",
-        "./codex/ultragoal",
-        "./codex/wat",
-        "./codex/web-access",
-        "./codex/writing-great-skills",
-        "./codex/you-should-know"
-      ]
+      "source": "./plugins/cy",
+      "description": "Cyrus's personal Claude Code skills, the same set install.mjs puts in ~/.claude/skills."
     }
   ]
 }

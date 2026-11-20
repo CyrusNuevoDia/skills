@@ -12,7 +12,7 @@ cd skills
 bun run install.mjs
 ```
 
-If you use Node.js and npm, run `node install.mjs` instead. Add `--dry-run` to see the install commands before running them. The installer uses the skills CLI to copy the packages into the global Codex and Claude Code skill directories. It restores the custom variants from [the catalog](catalog.json) and fetches the [third-party collection](upstream.json) at pinned Git revisions. Rerunning replaces copies of the skills listed in those files, so save any edits you made to an installed copy first.
+If you use Node.js and npm, run `node install.mjs` instead. Add `--dry-run` to see the install commands before running them. The installer uses the skills CLI to copy the packages into the global Codex and Claude Code skill directories. It installs every skill in [the catalog](catalog.json), including the third-party skills vendored in `upstream/`, so it needs no network beyond the skills CLI itself. Rerunning replaces copies of those skills, so save any edits you made to an installed copy first.
 
 The installer adds the Scrawl skill when it detects the Hex app. If you install Hex later, rerun the installer to add the skill.
 
@@ -39,7 +39,7 @@ For a local checkout, replace the GitHub source with `./codex` or `./claude`. Ea
 
 ## Install as a Claude Code plugin
 
-The repository is also a Claude Code plugin marketplace. Its one plugin, `cy`, bundles the Claude Code skills from [the catalog](catalog.json), using the `claude/` variant where one exists. In Claude Code, run:
+The repository is also a Claude plugin marketplace. Its one plugin, `cy`, bundles the Claude Code skills from [the catalog](catalog.json), using the `claude/` variant where one exists. On claude.ai, add `CyrusNuevoDia/skills` as a marketplace and install `cy`. In Claude Code, run:
 
 ```sh
 /plugin marketplace add CyrusNuevoDia/skills
@@ -48,16 +48,22 @@ The repository is also a Claude Code plugin marketplace. Its one plugin, `cy`, b
 
 From a shell, use `claude plugin marketplace add CyrusNuevoDia/skills` and `claude plugin install cy@cyrus-skills`. Plugin skills are namespaced, so `ceo` runs as `/cy:ceo`.
 
-The plugin leaves out the [third-party collection](upstream.json), which isn't stored here, and Scrawl, which needs the Hex app on the same machine. Use the installer for those.
+The plugin includes the vendored third-party skills. It leaves out Scrawl, which needs the Hex app on the same machine, and Codex-only skills.
 
-The plugin has no version number, so each commit is a new version. Auto-update is off by default for third-party marketplaces. Turn it on in `/plugin` under Marketplaces, or run `claude plugin marketplace update cyrus-skills` and then `claude plugin update cy@cyrus-skills`. Restart Claude Code to load the update.
+The plugin's version ends in a hash of its skills, so it changes whenever a skill does. Auto-update is off by default for third-party marketplaces. Turn it on in `/plugin` under Marketplaces, or run `claude plugin marketplace update cyrus-skills` and then `claude plugin update cy@cyrus-skills`. Restart Claude Code to load the update.
 
 A plugin installed this way stays on that machine. Cloud sessions, including Claude Code on the web, don't load plugins installed on your machine or ones a repository's `.claude/settings.json` turns on.
 
-`.claude-plugin/marketplace.json` is generated from the catalog. After you change `catalog.json`, run `bun run plugin.mjs` (or `node plugin.mjs`) and commit the result. `bun run plugin.mjs --check` fails when the manifest is out of date.
+The plugin in `plugins/cy` and `.claude-plugin/marketplace.json` are generated from the catalog: don't edit them by hand. After you change a skill or `catalog.json`, run `bun run plugin.mjs` and commit the result. `bun run plugin.mjs --check` fails when the plugin is out of date. The script needs Bun, because it reads frontmatter with `Bun.YAML`.
+
+claude.ai accepts only the frontmatter keys the skills spec allows (`name`, `description`, `license`, `allowed-tools`, `metadata`, `compatibility`), and no `<` or `>` in a description. The plugin's copy of each skill moves any other key into `metadata` as a string. Claude Code doesn't read keys there, so `disable-model-invocation` has no effect in the plugin's copies of `ui-prototype` and `writing-great-skills`.
+
+## Third-party skills
+
+[upstream.json](upstream.json) pins each third-party skill to a full Git commit. `upstream/<name>/` holds a copy of the skill at that commit, with the upstream repository's license file when the skill folder has none, and the catalog records its origin, commit and license. To add or update one, change its pin and run `bun run vendor.mjs`, then `bun run plugin.mjs`.
 
 ## Attribution and licenses
 
 The `wat` and `coderlm` packages retain their MIT license files and originate in [agent-wat](https://github.com/CyrusNuevoDia/agent-wat) and [coderlm](https://github.com/CyrusNuevoDia/coderlm). The installed agent-specific customizations are preserved here.
 
-The `cli` package adapts Justin Poehnelt's [You Need to Rewrite Your CLI for AI Agents](https://justin.poehnelt.com/posts/rewrite-your-cli-for-ai-agents/) under CC BY-SA 4.0; its frontmatter and source notes retain that attribution. The `heartbeat-loop` package retains its source attribution in the skill. No repository-wide license overrides these package-specific terms.
+The `cli` package adapts Justin Poehnelt's [You Need to Rewrite Your CLI for AI Agents](https://justin.poehnelt.com/posts/rewrite-your-cli-for-ai-agents/) under CC BY-SA 4.0; its frontmatter and source notes retain that attribution. The `heartbeat-loop` package retains its source attribution in the skill. No repository-wide license overrides these package-specific terms. Vendored third-party skills keep their own license files, and the catalog names each one's license. `breadboarding` and `shaping` come from [rjs/shaping-skills](https://github.com/rjs/shaping-skills), which has no license file.
