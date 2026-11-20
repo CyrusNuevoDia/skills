@@ -37,6 +37,25 @@ bunx skills add 'CyrusNuevoDia/skills/codex#COMMIT_SHA' -g -a codex
 
 For a local checkout, replace the GitHub source with `./codex` or `./claude`. Each installed copy stays at the version you installed until you run the installer again.
 
+## Install as a Claude Code plugin
+
+The repository is also a Claude Code plugin marketplace. Its one plugin, `cyrus-skills`, bundles the Claude Code skills from [the catalog](catalog.json), using the `claude/` variant where one exists. In Claude Code, run:
+
+```sh
+/plugin marketplace add CyrusNuevoDia/skills
+/plugin install cyrus-skills@cyrus-skills
+```
+
+From a shell, use `claude plugin marketplace add CyrusNuevoDia/skills` and `claude plugin install cyrus-skills@cyrus-skills`. Plugin skills are namespaced, so `ceo` runs as `/cyrus-skills:ceo`.
+
+The plugin leaves out the [third-party collection](upstream.json), which isn't stored here, and Scrawl, which needs the Hex app on the same machine. Use the installer for those.
+
+The plugin has no version number, so each commit is a new version. Auto-update is off by default for third-party marketplaces. Turn it on in `/plugin` under Marketplaces, or run `claude plugin marketplace update cyrus-skills` and then `claude plugin update cyrus-skills@cyrus-skills`. Restart Claude Code to load the update.
+
+A plugin installed this way stays on that machine. Cloud sessions, including Claude Code on the web, don't load plugins installed on your machine or ones a repository's `.claude/settings.json` turns on.
+
+`.claude-plugin/marketplace.json` is generated from the catalog. After you change `catalog.json`, run `bun run plugin.mjs` (or `node plugin.mjs`) and commit the result. `bun run plugin.mjs --check` fails when the manifest is out of date.
+
 ## Attribution and licenses
 
 The `wat` and `coderlm` packages retain their MIT license files and originate in [agent-wat](https://github.com/CyrusNuevoDia/agent-wat) and [coderlm](https://github.com/CyrusNuevoDia/coderlm). The installed agent-specific customizations are preserved here.
