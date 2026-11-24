@@ -1,6 +1,6 @@
 {
   "name": "cy",
-  "version": "1.0.0-ec2f77330cb8",
+  "version": "1.0.0-10dcde022208",
   "description": "Cyrus's personal Claude Code skills, the same set install.mjs puts in ~/.claude/skills.",
   "author": {
     "name": "Cyrus",

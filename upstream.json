@@ -81,6 +81,14 @@
       ]
     },
     {
+      "name": "learn-taste",
+      "source": "emilkowalski/skills/skills/learn-taste#64eb3deb9a5fbfa041faf783e0bc3fd635872e9c",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
       "name": "merge-risk",
       "source": "warpdotdev/common-skills/.agents/skills/merge-risk#8792394ff1b655e0af451b8fabb68ef0cfcbd208",
       "agents": [

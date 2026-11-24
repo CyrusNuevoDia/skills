@@ -151,6 +151,18 @@
       }
     },
     {
+      "name": "create-skill",
+      "source": "codex/create-skill",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "6ee96bfdb54c7a10bf44a32ded63daa6deb5a2016ddf2ace2e2599f8c4d7aca4",
+        "scripts/publish.mjs": "84887bc3e44ed8dba9ada855c4029274001ee9830055837fba5e65003c3dd04e"
+      }
+    },
+    {
       "name": "dataviz",
       "source": "codex/dataviz",
       "agents": [
@@ -161,6 +173,32 @@
         "SKILL.md": "3a1cfac770268fabceb6dbbb863b79eb3f73d3a874792827a0613ebd4f77497a",
         "references/analytical-design.md": "539f9fcce2f8a5c2fa8ada1ee058665461c0d5f74f03ad65df6ef7f528c224db",
         "references/tufte-principles.md": "e45dbf7a01e6c4422717fdb161c01c4bad6aa56d698e60c53e9d29c7af0ba7b8"
+      }
+    },
+    {
+      "name": "explain",
+      "source": "codex/explain",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "6961cce22c501563772eef08de93f7dd301bae7bb1d4c112ef2ab6a333407bcd"
+      }
+    },
+    {
+      "name": "gemini",
+      "source": "codex/gemini",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "62ef4b716b45890fb4d7046262ed9ce75b019f840467963c393c941c23d88114",
+        "references/agents-and-body.md": "15c21b4b5d56a10dba454dcb60282775ae450616df9b7d8385535fca78cbcf1c",
+        "references/commands.md": "a874825f845f9be246108a9ff5f76ebb5db2af91d986d4f41bcce06ee5de260e",
+        "references/models.md": "660ef55e70fd70fd49a10a3c53f028e90019b5e5fe3734af76f10fe779c44223",
+        "references/output.md": "b47773a0f074582a48d3472cb5e2a88a11380fd16bb373fce6561052d9d27fa4"
       }
     },
     {
@@ -203,6 +241,17 @@
       "files": {
         "SKILL.md": "28391b450e3a5dd91ed41c9cbdce042976b507090fb64b8ca563440796a480f3",
         "references/scratchpad.md": "b8111ae5bcf210e4fc0191faf07fc0c284a2a1dd286baa48c79b006c023bbd1c"
+      }
+    },
+    {
+      "name": "lead-signals",
+      "source": "codex/lead-signals",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "346751bbd77c06607d4acd606979f6d22b94a04eb1e806f5df170d3cb2592a14"
       }
     },
     {
@@ -659,6 +708,21 @@
         "LANGUAGE.md": "6feca2140439c54a774749e8367f18350899ff69c777144ed2248cd4407949fa",
         "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
         "SKILL.md": "f00de04c7bb83cfd0ed1f97f3401a83838212c30856912ee44ba406649e6c749"
+      }
+    },
+    {
+      "name": "learn-taste",
+      "source": "upstream/learn-taste",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "origin": "https://github.com/emilkowalski/skills/tree/64eb3deb9a5fbfa041faf783e0bc3fd635872e9c/skills/learn-taste",
+      "upstreamRef": "64eb3deb9a5fbfa041faf783e0bc3fd635872e9c",
+      "license": "MIT",
+      "files": {
+        "LICENSE": "4ff5bdb7887ec1435c9cab0e8d1a7caee704d894d65c2a008ccc68b1cc2f260b",
+        "SKILL.md": "d624b8cd475eec24c5dc3f49b0380b56c8dab8399df11b92d7c9685aa8d4d33e"
       }
     },
     {
