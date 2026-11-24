@@ -244,6 +244,31 @@
       }
     },
     {
+      "name": "launch-video",
+      "source": "codex/launch-video",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "origin": "https://x.com/hnshah/status/2122508958850261403",
+      "files": {
+        "SKILL.md": "771be0c10ccddfcba8a85bd4eab1a3100d57eda636fd8c21aa07f891c24c8763",
+        "references/00-start-here.md": "c16e3b9d556f5e09333ea1b56da1fcfdded6e0863ef4b63b520f12dbafaa9b4d",
+        "references/01-decide-the-promise.md": "8524937cda2657c3d1f320a9f483aeb67b63fb559befdb1dbc91c965e47116b8",
+        "references/02-find-the-material.md": "d30bf2c157a431514665d830576916ed2e4e89181378968745018bd186051393",
+        "references/03-borrow-the-structure.md": "3dd0c1701d7260694eab3c07e6cd4c5aae932bef686f97f09e5fd468aff735dc",
+        "references/04-direct-the-first-cut.md": "ddcdb492064535bf051e2c0d1bfe6bde0aeaf12d2063183c229763b706af5b44",
+        "references/05-review-and-improve.md": "39f8779718cda5f9ea449834db117f0d191a0defbe29cb85bcddb4275fb003bc",
+        "references/06-publish-and-learn.md": "d1151f64449dbc2def967ceadc8b6cc5434fea2993a0102ca2d64d8fcd4da9a9",
+        "references/07-the-working-kit.md": "d169208cef9109aef81fc766c80f3bb5dc047e9b62bc0c0313740b15e29f5980",
+        "references/08-examples-and-sources.md": "c7161047b7d51fab16f794d949b6d713f7a651f81c3a8155e660ef873ca2669f",
+        "references/09-video-teardowns.md": "f73229d7bb75be55f7804362b188bb816a5b591bdf4f42db4807e1fc9ae3c24f",
+        "references/images/00-start-here.gif": "51eeeb5efed57c5d5ed4c0181543086d50a64b6d9b366efb8d86bbb990d28030",
+        "references/images/02-find-the-material.gif": "90b4eabcf9662f5c2c106b43d2995bcb940aab8ab005e0948d41e870ce5ab479",
+        "references/images/05-review-and-improve.png": "60217762d9868ba386121edb69e484573705139d28b1ac610aa055e5a3e80d68"
+      }
+    },
+    {
       "name": "lead-signals",
       "source": "codex/lead-signals",
       "agents": [
