@@ -420,17 +420,6 @@
       }
     },
     {
-      "name": "treg",
-      "source": "codex/treg",
-      "agents": [
-        "codex",
-        "claude-code"
-      ],
-      "files": {
-        "SKILL.md": "8e3de4b749fbf115415009884b5cd9b66e8d09ec9d5db0b8c9fc30fef706740f"
-      }
-    },
-    {
       "name": "tutor",
       "source": "codex/tutor",
       "agents": [
