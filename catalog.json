@@ -281,13 +281,22 @@
     },
     {
       "name": "make",
-      "source": "codex/make",
+      "source": "claude/make",
       "agents": [
-        "codex",
         "claude-code"
       ],
       "files": {
-        "SKILL.md": "73694f3e8c4e5a3678138a75587e5e9385161058234e2e51df538819a6817c0d"
+        "SKILL.md": "0e9b9fdc372287c9594545826c544555819335c581a9d91d1bc209d17a495cf1"
+      }
+    },
+    {
+      "name": "make",
+      "source": "codex/make",
+      "agents": [
+        "codex"
+      ],
+      "files": {
+        "SKILL.md": "7b1f3dfbfe9630e9aa0853a1cb75af6b1da2d1b1ef3a978ccb365fd7f6cd0769"
       }
     },
     {

@@ -15,19 +15,20 @@ Codex elicits. Codex researches. Codex plans. Codex builds. Codex verifies.
 
 Delegated Codex runs use one of these models and reasoning efforts:
 
-- **Luna** for routine, bulk, mechanical, or clear-spec research and builders.
-- **Sol** for complex research and builders, architecture, integration, or stubborn repair work.
+- **Terra** for routine, bulk, mechanical, or clear-spec research and builders: `--model gpt-6.1-terra -c model_reasoning_effort=<high|xhigh>`
+- **Sol** for most builders and research that needs judgment, and anything user-facing: `--model gpt-6.2-sol -c model_reasoning_effort=<medium|high|xhigh>`
+- **Astra** for the hardest work (architecture, integration, stubborn repair) and for reviews: `--model gpt-6.2-astra -c model_reasoning_effort=<high|xhigh>`
 
-Use the current project's model policy and the runtime's native agent tool. If model selection is unavailable, inherit the parent model.
+Choose the least expensive supported combination that is adequate for the task, and escalate when the output misses the bar. Let `$subagent` own the remaining execution flags. Do not dispatch older GPT models (gpt-6-luna, gpt-6.1-sol, 5.x) or other model families.
 
 ## Roles
 
 | Role     | Actor                 | Purpose                                   |
 | -------- | --------------------- | ----------------------------------------- |
 | Elicitor | Codex + Human         | Shape requirements, resolve ambiguity     |
-| Subagent | Native subagent       | Research codebase, gather context         |
+| Subagent | Codex via `$subagent` | Research codebase, gather context         |
 | Planner  | Codex                 | Decompose into parallelizable workstreams |
-| Builder  | Native subagent       | Write the code                            |
+| Builder  | Codex via `$subagent` | Write the code                            |
 | Verifier | Codex                 | Tests, lint, typecheck, review            |
 
 ## Phase 1: Shape
@@ -36,7 +37,7 @@ Invoke sub-skills to collaboratively define the problem and solution with the hu
 
 ### Step 1: Shape the solution
 
-Use `shaping` if installed. Work with the human to:
+Use the Skill tool to invoke `shaping`. Work with the human to:
 
 - Define requirements (R0, R1, R2...)
 - Explore solution shapes (A, B, C...)
@@ -57,11 +58,11 @@ Use the Skill tool to invoke `/build`. Work with the human to:
 
 ## Phase 2: Research
 
-**Delegate codebase exploration through the runtime's native agent tool.** Give the researcher a self-contained prompt and consume its report.
+**Use `$subagent` for all codebase exploration.** Do not explore the repo yourself — no `rg`/`fd`/`grep` sweeps, no opening files to "get oriented," no reading source to answer the subagent's questions for it. Every search, file read, and bit of context gathering happens inside a dispatched subagent. Your job is to write the research prompt, invoke `$subagent`, and consume its report.
 
 Delegate context gathering directly to the subagent: do not pre-gather paths, run exploratory searches for it, or embed file contents. Give it the shaped requirements and the questions it must answer, then let it inspect the repo.
 
-Include the goal, scope, constraints, deliverables, and context in the research prompt.
+Use `$subagent`'s `Goal / Scope / Constraints / Deliverables / Context` prompt template. Let `$subagent`'s `resources/references/codex-exec.md` own model selection, flags, sandboxing, session tracking, and resume behavior.
 
 The research prompt must include:
 
@@ -126,7 +127,7 @@ Show the workstream breakdown and ask for approval before dispatching. The user 
 
 Dispatch Codex agents to implement each workstream.
 
-Use the runtime's native agent tool for each builder. Include the task, allowed files, constraints, and deliverables in the workstream prompt.
+Use `$subagent` for each Builder dispatch. The workstream prompt decides the task, allowed files, constraints, and deliverables; `$subagent` decides the correct non-interactive Codex exec mechanics.
 
 ### Workstream prompt template
 
