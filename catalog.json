@@ -795,6 +795,22 @@
       }
     },
     {
+      "name": "move-37",
+      "source": "upstream/move-37",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "origin": "https://github.com/DannyMac180/skills/tree/6e6ffc686d7e9d5a181fba61ef7c13af294627ca/move-37",
+      "upstreamRef": "6e6ffc686d7e9d5a181fba61ef7c13af294627ca",
+      "license": "MIT",
+      "files": {
+        "LICENSE": "d9f4854c51a32298db4da8b686983d004e8542bfabbb2e434b23bb1f5a5e2e21",
+        "README.md": "d093e783e5a87d04b197d9bf293519eb4a82d0ba522f72c72c8cd1e3aab08789",
+        "SKILL.md": "9781553db615a49bdcf645c32fde67e7715e106728fcb9dfa0e54022d4f534b7"
+      }
+    },
+    {
       "name": "prototype",
       "source": "upstream/prototype",
       "agents": [

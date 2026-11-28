@@ -104,6 +104,14 @@
       ]
     },
     {
+      "name": "move-37",
+      "source": "DannyMac180/skills/move-37#6e6ffc686d7e9d5a181fba61ef7c13af294627ca",
+      "agents": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    {
       "name": "prototype",
       "source": "mattpocock/skills/skills/engineering/prototype#6bcbcb09e2f1ed5fa20b4e890c732ecbb58c6b64",
       "agents": [
