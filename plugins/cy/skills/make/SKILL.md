@@ -2,41 +2,48 @@
 name: make
 description: |
   Full-stack feature builder. Shapes requirements with the human via /shaping
-  and /build, researches the codebase with Claude subagents, plans the
-  implementation, then orchestrates parallel Claude subagents to write the code.
-  Claude models only: never dispatches GPT or Codex.
+  and /build, researches the codebase with subagents, plans the implementation,
+  then orchestrates parallel subagents to write the code. The user names the
+  runner for every delegation: Claude subagents, gemini-agy or gpt-codex.
 ---
 
 # Make
 
-You orchestrate; Claude subagents research, build and verify. Every delegation goes through the Agent tool
-(or a Workflow, when the user opted into one) with an explicit `model`. Never dispatch GPT models, Codex,
-`codex exec` or the `subagent` skill from this skill. The Codex copy of `make` in `~/.agents/skills/make`
-is the GPT version and stays separate.
+You orchestrate; subagents research, build and verify. Every delegation goes to a runner the user named, with an explicit model.
 
-## Model policy
+## Runners
 
-Pick by the work, not the price; escalate without asking when output misses the bar.
+Before the first delegation (Phase 2), the user must have named the runner: one for the whole build, or one per role or workstream. If they haven't, stop and ask, listing the three runners below. Never pick a runner yourself or fall back to one, and don't switch runners mid-build without asking. Once a runner is named, choosing its model per task is your call.
 
-| Model    | Use for |
-| -------- | ------- |
-| `fable`  | Hard or ambiguous work: architecture, integration across modules, stubborn repairs, plan and implementation reviews, anything user-facing that needs taste |
-| `opus`   | Most builders on a clear spec, research that needs judgment, reviews when fable is not warranted |
-| `sonnet` | Bulk mechanical edits on a decision-complete spec, migrations, wide read-only surveys |
-| `haiku`  | Only trivial, fully specified lookups (list files, grep and summarise); never code that ships |
+| Runner       | How you dispatch | What it's good at |
+| ------------ | ---------------- | ----------------- |
+| `claude`     | Agent tool with an explicit `model` (or a Workflow, when the user opted into one) | Results come back inside this turn, a finished agent can be continued with SendMessage, and builders can get `isolation: "worktree"` |
+| `gemini-agy` | Read `../gemini-agy/SKILL.md` (next to this skill's directory) and follow it | A second model family with its own quota, useful for independent builders and for reviews that shouldn't share Claude's blind spots |
+| `gpt-codex`  | Read `../gpt-codex/SKILL.md` and follow it | Same, with GPT models and an OS-level sandbox that can keep a run read-only or inside the repo |
 
-Anything user-facing that is not mechanical (docs, UI, copy) needs `opus` or `fable`. Reviews of plans and
-implementations use `fable` or `opus`.
+`gemini-agy` and `gpt-codex` are set to manual-only, so the Skill tool won't load them; read their `SKILL.md` files directly. Both runners are separate CLIs: they see only the prompt you write, report through a file or JSON, and make edits you must review in the diff.
+
+### Models by class
+
+Pick the class by the work, then take the named runner's model for that class; the runner's skill says how to set effort. Escalate without asking when output misses the bar.
+
+| Class  | Use for | `claude` | `gemini-agy` | `gpt-codex` |
+| ------ | ------- | -------- | ------------ | ----------- |
+| Fable  | Hard or ambiguous work: architecture, integration across modules, stubborn repairs, plan and implementation reviews, user-facing work that needs taste | `fable` | `gemini-4-hydrogen` | `gpt-6.2-astra` |
+| Opus   | Most builders on a clear spec, research that needs judgment | `opus` | `gemini-4-neon` | `gpt-6.2-sol` |
+| Sonnet | Bulk mechanical edits on a decision-complete spec, migrations, wide read-only surveys | `sonnet` | none; use `gemini-4-neon` at `medium` effort | `gpt-6.1-terra` |
+
+Anything user-facing that isn't mechanical (docs, UI, copy) needs Opus or Fable class. Claude `haiku` is only for trivial, fully specified lookups, never code that ships.
 
 ## Roles
 
-| Role     | Actor                                    | Purpose                                   |
-| -------- | ---------------------------------------- | ----------------------------------------- |
-| Elicitor | You + Human                              | Shape requirements, resolve ambiguity     |
-| Research | Claude subagent (`Explore` or general)   | Read the codebase, gather context         |
-| Planner  | You (optionally a `Plan` agent)          | Decompose into parallelizable workstreams |
-| Builder  | Claude subagent (`general-purpose`)      | Write the code                            |
-| Verifier | You, plus a `fable`/`opus` reviewer      | Tests, lint, typecheck, review            |
+| Role     | Actor                                     | Purpose                                   |
+| -------- | ----------------------------------------- | ----------------------------------------- |
+| Elicitor | You + Human                               | Shape requirements, resolve ambiguity     |
+| Research | Subagent on the named runner              | Read the codebase, gather context         |
+| Planner  | You (optionally a Claude `Plan` agent)    | Decompose into parallelizable workstreams |
+| Builder  | Subagent on the named runner              | Write the code                            |
+| Verifier | You, plus a Fable-class reviewer          | Tests, lint, typecheck, review            |
 
 ## Phase 1: Shape
 
@@ -59,14 +66,11 @@ Use the Skill tool to invoke `/build`. Work with the human to:
 - Lock in each decision before moving to the next
 - Resolve all ambiguity
 
-**Exit criteria:** A shaped pitch with clear requirements, a selected shape, and zero open questions.
+**Exit criteria:** A shaped pitch with clear requirements, a selected shape, zero open questions, and a named runner.
 
 ## Phase 2: Research
 
-Delegate codebase exploration to a Claude subagent rather than sweeping the repo yourself: main-thread
-context is the scarce resource. Use the `Explore` agent (`sonnet`, or `opus` when the questions need
-judgment) for locating code, and a `general-purpose` agent when it must run commands. Don't pre-gather paths
-for it; give it the shaped requirements and the questions it must answer.
+Delegate codebase exploration to the named runner rather than sweeping the repo yourself: main-thread context is the scarce resource. On `claude`, use the `Explore` agent for locating code and a `general-purpose` agent when it must run commands. On `gemini-agy` or `gpt-codex`, send a read-only research run. Don't pre-gather paths for it; give it the shaped requirements and the questions it must answer.
 
 The research prompt must include:
 
@@ -98,19 +102,19 @@ Decompose the implementation into independent, parallelizable workstreams.
 
 ### Workstream spec
 
-| Field         | Description                                                                 |
-| ------------- | --------------------------------------------------------------------------- |
-| **Scope**     | What this workstream builds (1-2 sentences)                                 |
-| **Files**     | Exact files to create or modify                                             |
-| **Model**     | `fable`, `opus` or `sonnet`, per the model policy                            |
+| Field         | Description                                                                  |
+| ------------- | ---------------------------------------------------------------------------- |
+| **Scope**     | What this workstream builds (1-2 sentences)                                  |
+| **Files**     | Exact files to create or modify                                              |
+| **Runner**    | `claude`, `gemini-agy` or `gpt-codex`, as the user named it                  |
+| **Model**     | The runner's model for the class this work needs                             |
 | **Context**   | Paths, excerpts, and patterns from the research report this workstream needs |
-| **Standards** | Coding patterns and conventions to follow                                   |
-| **Success**   | How to verify this workstream is correct                                    |
+| **Standards** | Coding patterns and conventions to follow                                    |
+| **Success**   | How to verify this workstream is correct                                     |
 
 ### Conflict prevention
 
-**Workstreams MUST touch non-overlapping files.** If two need the same file, run them sequentially and mark
-the dependency. When builders could collide anyway, give each `isolation: "worktree"`.
+**Workstreams MUST touch non-overlapping files.** If two need the same file, run them sequentially and mark the dependency. When `claude` builders could collide anyway, give each `isolation: "worktree"`. In a Bun repo, never run two CLI builders at once, since their concurrent installs race on the lockfile and kill each other.
 
 Before dispatching, validate:
 
@@ -120,13 +124,11 @@ Before dispatching, validate:
 
 ### Present plan to user
 
-Show the workstream breakdown and ask for approval before dispatching: how many workstreams, which run in
-parallel, what each does, which files and which model each uses.
+Show the workstream breakdown and ask for approval before dispatching: how many workstreams, which run in parallel, what each does, which files, and which runner and model each uses.
 
 ## Phase 4: Execute
 
-Dispatch one Claude subagent per workstream with the Agent tool (`subagent_type: "general-purpose"`, an
-explicit `model`). Launch independent workstreams in a single message so they run concurrently.
+Dispatch one subagent per workstream on its runner. For `claude`, use the Agent tool (`subagent_type: "general-purpose"`, an explicit `model`) and launch independent workstreams in a single message so they run concurrently. For `gemini-agy` and `gpt-codex`, follow that skill's run instructions and start independent runs in the background.
 
 ### Workstream prompt template
 
@@ -142,9 +144,8 @@ Prompts are self-contained: the subagent sees only what you write. Never paste s
 ### If a workstream fails
 
 1. Read the error output
-2. Diagnose: missing context? wrong file? bad assumption? model too weak?
-3. Continue the same agent with SendMessage when it has useful context, or re-dispatch with a corrected
-   prompt (escalating the model if the output missed the bar) — do NOT patch it by hand
+2. Diagnose: missing context? wrong file? bad assumption? model too weak? permissions denied?
+3. Continue the same agent when it has useful context (SendMessage on `claude`, resume on the CLI runners), or re-dispatch with a corrected prompt, escalating the model if the output missed the bar. Do NOT patch it by hand
 
 ## Phase 5: Verify
 
@@ -154,8 +155,8 @@ After all builders complete, verify the full integration yourself:
 2. **Lint** — `bun run lint`
 3. **Format** — `bun run fmt`
 4. **Test** — `bun test`
-5. **Review** — read every changed file (the full diff, not the agents' summaries), and for non-trivial work
-   dispatch a `fable` or `opus` reviewer given the code, not your conclusions
+5. **Review** — read every changed file (the full diff, not the agents' summaries), and unless the change is a few
+   lines, dispatch a Fable-class reviewer on the named runner, given the code, not your conclusions
 
 Use the repo's own commands where they differ from these.
 
@@ -168,14 +169,12 @@ Use the repo's own commands where they differ from these.
 
 ### Done
 
-Present the user with a summary of what was built, the files created or modified, the verification results,
-and any remaining concerns.
+Present the user with a summary of what was built, the files created or modified, the runners and models used, the verification results, and any remaining concerns.
 
 ## Notes
 
-- **The orchestrator never writes code during execution.** Builders write code; you plan, verify, and
-  re-dispatch.
-- **Claude models only.** No GPT, no Codex, no `codex exec`, no `subagent` skill.
+- **The orchestrator never writes code during execution.** Builders write code; you plan, verify, and re-dispatch.
+- **The user names the runner.** No runner named means ask, not default.
 - **Context quality matters.** The better the prompt, the better the output. Invest time in Phase 2.
 - **Parallelism is the point.** Decompose so independent workstreams run concurrently.
 - **Re-dispatch, don't patch.** If a builder's output is wrong, fix the prompt and re-run.
