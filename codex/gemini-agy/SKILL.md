@@ -1,6 +1,6 @@
 ---
 name: gemini-agy
-description: Send a task to a Gemini agent through the Antigravity CLI (agy -p), from Claude Code or Codex. Only use when the user names this skill or explicitly asks to send work to Gemini or agy, or when make's plan assigns a workstream to the gemini-agy runner. Covers model choice (Hydrogen, Neon), permissions, prompts, background runs, resuming and checking results. For image, audio, video or Deep Research API calls, use the gemini skill instead.
+description: Send a task to a Gemini agent through the Antigravity CLI (agy -p), from Claude Code or Codex. Only use when the user names this skill or explicitly asks to send work to Gemini or agy, or when make's plan assigns a workstream to the gemini-agy runner. Covers model choice (Hydrogen, Neon), permissions, prompts, background runs, resuming and checking results. For image, audio, video or Deep Research API calls, use the gemini-cli skill instead.
 disable-model-invocation: true
 ---
 

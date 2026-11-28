@@ -187,21 +187,6 @@
       }
     },
     {
-      "name": "gemini",
-      "source": "codex/gemini",
-      "agents": [
-        "codex",
-        "claude-code"
-      ],
-      "files": {
-        "SKILL.md": "62ef4b716b45890fb4d7046262ed9ce75b019f840467963c393c941c23d88114",
-        "references/agents-and-body.md": "15c21b4b5d56a10dba454dcb60282775ae450616df9b7d8385535fca78cbcf1c",
-        "references/commands.md": "a874825f845f9be246108a9ff5f76ebb5db2af91d986d4f41bcce06ee5de260e",
-        "references/models.md": "660ef55e70fd70fd49a10a3c53f028e90019b5e5fe3734af76f10fe779c44223",
-        "references/output.md": "b47773a0f074582a48d3472cb5e2a88a11380fd16bb373fce6561052d9d27fa4"
-      }
-    },
-    {
       "name": "gemini-agy",
       "source": "codex/gemini-agy",
       "agents": [
@@ -209,8 +194,23 @@
         "claude-code"
       ],
       "files": {
-        "SKILL.md": "874ecc0154ed3062f2e7a43c93029deb4615190d7bdce4e9f7e508d5d3ec53dd",
+        "SKILL.md": "57970f885a036b5bde40acfba2ce21e030e43892182d897b44eceb5c3051730b",
         "agents/openai.yaml": "e52ad9cf6aeafd480821e1232dddf38831abafe3848e9c965ef4426f289c32c4"
+      }
+    },
+    {
+      "name": "gemini-cli",
+      "source": "codex/gemini-cli",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "e3214de81d1b83d63d7db4f361dca1eaee0adf8d138582571f15b55a1f769ae2",
+        "references/agents-and-body.md": "15c21b4b5d56a10dba454dcb60282775ae450616df9b7d8385535fca78cbcf1c",
+        "references/commands.md": "a874825f845f9be246108a9ff5f76ebb5db2af91d986d4f41bcce06ee5de260e",
+        "references/models.md": "660ef55e70fd70fd49a10a3c53f028e90019b5e5fe3734af76f10fe779c44223",
+        "references/output.md": "b47773a0f074582a48d3472cb5e2a88a11380fd16bb373fce6561052d9d27fa4"
       }
     },
     {

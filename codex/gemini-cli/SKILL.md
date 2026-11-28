@@ -1,5 +1,5 @@
 ---
-name: gemini
+name: gemini-cli
 description: |
   Use the `gemini-api` CLI (google-gemini/gemini-api-cli) to call Gemini models and managed agents from the shell.
   Use when the task needs something Gemini does well or Claude can't do natively: generating or editing images,
@@ -7,7 +7,7 @@ description: |
   to text/SRT; getting a second opinion from a Gemini model; or delegating long-running research to a Gemini
   managed agent (Deep Research, Antigravity). Triggers include "use Gemini", "ask Gemini", "nano banana",
   "generate an image/logo/mascot/hero", "make a voiceover", "text to speech", "generate music", "generate a video",
-  "transcribe this", "captions/SRT", "what's in this video/YouTube link", "deep research", and explicit `/gemini`.
+  "transcribe this", "captions/SRT", "what's in this video/YouTube link", "deep research", and explicit `/gemini-cli`.
 ---
 
 # gemini
