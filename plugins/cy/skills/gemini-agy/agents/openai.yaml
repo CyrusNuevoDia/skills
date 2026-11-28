@@ -1,0 +1,5 @@
+interface:
+  display_name: "Gemini agy"
+  short_description: "Send a task to a Gemini agent with the agy CLI"
+policy:
+  allow_implicit_invocation: false

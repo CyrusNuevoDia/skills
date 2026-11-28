@@ -1,0 +1,5 @@
+interface:
+  display_name: "GPT Codex"
+  short_description: "Send a task to a non-interactive Codex exec run"
+policy:
+  allow_implicit_invocation: false

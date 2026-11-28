@@ -202,6 +202,18 @@
       }
     },
     {
+      "name": "gemini-agy",
+      "source": "codex/gemini-agy",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "3be1f197c944e55ae5442b7ae999de3421ab3a6d2e2cf0fb3453e2038b93c056",
+        "agents/openai.yaml": "e52ad9cf6aeafd480821e1232dddf38831abafe3848e9c965ef4426f289c32c4"
+      }
+    },
+    {
       "name": "generate-diffmap",
       "source": "codex/generate-diffmap",
       "agents": [
@@ -228,6 +240,18 @@
       ],
       "files": {
         "SKILL.md": "e56da5806b8b60368b2bacb137a6b1a61e1a539b9bf6a75fefe7a5d5c1c3dcd3"
+      }
+    },
+    {
+      "name": "gpt-codex",
+      "source": "codex/gpt-codex",
+      "agents": [
+        "codex",
+        "claude-code"
+      ],
+      "files": {
+        "SKILL.md": "61a6c498da87733810252bdbc95ea16c59d7ba639032a252aee3dc3260eb0782",
+        "agents/openai.yaml": "f3284693aa61d146628c8465d4e3a9c573decbd5ac675e522b02923a16c22366"
       }
     },
     {
@@ -412,20 +436,6 @@
       ],
       "files": {
         "SKILL.md": "ecc76d40a2db220a04eb29fec53b180e01d4a9b12213799c0a59804f07e15d70"
-      }
-    },
-    {
-      "name": "subagent",
-      "source": "claude/subagent",
-      "agents": [
-        "claude-code"
-      ],
-      "files": {
-        "README.md": "216e216cf6899066bbb913469f42f08f84f2a65117cf6d6ef37b0a0c829a5fc4",
-        "SKILL.md": "e0f9a5345a84de38764585cb8a3eb705fafedc5849e76a128136f98630c432e4",
-        "agents/openai.yaml": "375339d6eb3b239f0790cd06dd1fe27bac064e20a9f1d5d47b1cb8617d5b2362",
-        "resources/references/codex-exec.md": "a64500f76b89b314116ff49e23370b73764ccfc7943ec1842364ae8206a3c2b1",
-        "scripts/run.sh": "57eaf2deba7d4b8742ffda4a122bad6bd9f1be0199dbbaf4aca7fe9418267b2f"
       }
     },
     {
