@@ -19,6 +19,8 @@ The two models map to the Claude tiers, so pick the way you'd pick between Fable
 
 Pass the model with `--model` and the effort with `--effort low|medium|high|xhigh`. Use `high` by default, `medium` for simple runs and `xhigh` for hard ones before you move up a model. Model IDs with the effort baked in (`gemini-4-neon-high`) also work; `agy models` lists them all. Escalate when the output misses the bar rather than defending a cheaper choice.
 
+If a model isn't available (the run rejects the model name, or `agy models` doesn't list it), the installed CLI is too old for it. Update it with `agy update`, check `agy --version`, and retry. Don't fall back to another model.
+
 ## Run it
 
 `agy` has no working-directory flag, so `cd` into the repo first:

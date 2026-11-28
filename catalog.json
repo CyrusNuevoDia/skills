@@ -209,7 +209,7 @@
         "claude-code"
       ],
       "files": {
-        "SKILL.md": "3be1f197c944e55ae5442b7ae999de3421ab3a6d2e2cf0fb3453e2038b93c056",
+        "SKILL.md": "874ecc0154ed3062f2e7a43c93029deb4615190d7bdce4e9f7e508d5d3ec53dd",
         "agents/openai.yaml": "e52ad9cf6aeafd480821e1232dddf38831abafe3848e9c965ef4426f289c32c4"
       }
     },
@@ -250,7 +250,7 @@
         "claude-code"
       ],
       "files": {
-        "SKILL.md": "61a6c498da87733810252bdbc95ea16c59d7ba639032a252aee3dc3260eb0782",
+        "SKILL.md": "28e215cd94d4129ec2dbf7f494730ce2c330ecc12dd4ce19024dfd28ea2f7ad4",
         "agents/openai.yaml": "f3284693aa61d146628c8465d4e3a9c573decbd5ac675e522b02923a16c22366"
       }
     },

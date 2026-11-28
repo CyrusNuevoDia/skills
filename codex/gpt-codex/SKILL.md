@@ -20,7 +20,7 @@ The three models map to the Claude tiers, so pick the way you'd pick between Fab
 
 Set effort with `-c model_reasoning_effort=<level>`. Levels run `low`, `medium`, `high`, `xhigh`, `max`, and an invalid level fails the run with the list of valid ones. Use `high` by default, `medium` for simple IO-heavy runs, and `xhigh` or `max` for hard work before you move up a model. Escalate when the output misses the bar rather than defending a cheaper choice. Don't send runs to older GPT models (5.x, `gpt-6-luna`, `gpt-6-sol`, `gpt-6.1-sol`).
 
-A run that fails with `model_not_in_accessible_catalog` means the installed CLI is too old for that model, not that the account lacks it: update Codex (`bun add -g @openai/codex@latest`) and retry. Don't quietly fall back to an older model.
+If a model isn't available (the run fails with `model_not_found` or `model_not_in_accessible_catalog`, or warns that model metadata wasn't found), the installed CLI is too old for it. Update Codex with `bun add -g @openai/codex@latest`, check `codex --version`, and retry. Don't fall back to an older model.
 
 ## Run it
 
